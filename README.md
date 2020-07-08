@@ -6,7 +6,7 @@ npm install express ejs mongoose mongod
 
 after the dependencies gets installed.
 
-run the project using the command #" node app.js"
+run the project using the command " node app.js"
 
 project is now available on localhost:3000.
 
