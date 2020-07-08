@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cabin+Sketch&display=swap" rel="stylesheet">
+  <title>Score Keeper</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style media="screen">
+body{
+  background: #acb6e5;
+  background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);
+  background: linear-gradient(to right, #86fde8, #acb6e5);
+  text-align: center;
+}
+.font-1{
+  font-family: 'Audiowide', cursive;
+  font-size: 2.5rem;
+}
+.font-2{
+  font-family: 'Audiowide', cursive;
+  font-size: 1.5rem;
+}
+.font-3{
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1rem;
+}
+.section-1{
+  padding: 20px 0;
+}
+.text-white{
+  color: #fff;
+}
+a:hover{
+  text-decoration: none;
+}
+.card {
+  padding: 10px;
+  margin: 15px 0;
+  background: #808080;
+  background: -webkit-linear-gradient(to right, #3fada8, #808080);
+  background: linear-gradient(to right, #3fada8, #808080);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+/* for md and lg devices */
+@media(min-width:992px){
+  .section-1{
+    width:50%;
+    margin: auto;
+  }
+}
+/* for s and xs devices */
+@media only screen and (max-width:990px){
+  .section-1{
+    width:90%;
+    margin:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+  <!-- the lobby section page for the match details -->
+
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Cric Score</a>
+    <a href="/"><button class="btn btn-outline-info my-2 my-sm-0">Logout</button></a>
+  </nav>
+  <div class="section-1">
+    <h1 class="font-2">Current Matches</h1>
+
+<%  for(var i=0 ; i < match_data.length ; i++){  %>
+    <div class="card ">
+      <a href="/match_info<%= match_data[i].id %>" class="text-white">
+        <div class="card-body">
+          <h1 class="font-2"><%=match_data[i].series%></h1>
+          <hr>
+          <h2 class="font-3 "><%=match_data[i].teams%></h2>
+          <h5 class="font-3"><%=match_data[i].score%></h5>
+          <p class="font-3"><%=match_data[i].venue%></p>
+        </div>
+      </a>
+    </div>
+  <% } %>
+
+</body>
+
+</html>

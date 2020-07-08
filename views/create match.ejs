@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>create match</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+<link rel="stylesheet" href="public/assets/css/creatematch.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box">
+  <h2>Add Match</h2>
+  <form name="lform" onsubmit="return validate(this)" method="post" action="/createM<%=ID%>">
+     <div class="inputbox">
+      <input type="text" name="Series" required onkeyup="this.setAttribute('value', this.value);" value="" autocomplete = "off">
+       <span data-placeholder = "Series" ></span>
+    </div>
+    <div class="inputbox">
+      <input type="text" name="Teams" required onkeyup="this.setAttribute('value', this.value);" value="" autocomplete = "off">
+       <span data-placeholder = "Teams" ></span>
+    </div>
+    <div class="inputbox">
+      <input type="text" name="Venue" required onkeyup="this.setAttribute('value', this.value);" value="" autocomplete = "off">
+       <span data-placeholder = "Venue" ></span>
+    </div>
+    <div class="inputbox">
+      <input type="text" name="MatchID" required onkeyup="this.setAttribute('value', this.value);" value="" autocomplete = "off">
+       <span data-placeholder = "Match ID" ></span>
+    </div>
+        <input type="submit" value="Submit">
+  </form>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script  src="public/assets/js/creatematch.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Commentry page</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<style media="screen">
+  body {
+    background-image: url("https://i.redd.it/y1ostvqnr4711.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: sans-serif;
+  }
+
+  form {
+    width: 360px;
+    text-align: left;
+    height: 306.8px;
+  }
+
+  .box .inputbox input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.062rem;
+    margin: 8px 0;
+    margin-bottom: 1.875rem;
+    border: none;
+    border-bottom: 2px solid #adadad;
+    outline: none;
+    background: transparent;
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  span::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    font-size: 18px;
+    color: fff;
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+
+  span::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 73.55%;
+    left: 0;
+    background: linear-gradient(120deg, #349edb, #8e44ad);
+    transition: 0.3s;
+  }
+
+  .box .inputbox {
+    position: relative;
+  }
+
+  .box .inputbox input:focus ~ span,
+  .box .inputbox input:valid ~ span {
+    color: fff;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    background: linear-gradient(120deg, #349edb, #8e44ad);
+    background-size: 200%;
+    color: white;
+    font-size: 1.9rem;
+    position: absolute;
+    top: 65%;
+    padding: 20px;
+    margin-top: 2rem;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 360px;
+    height: 60px;
+    outline: none;
+  }
+
+  input[type="submit"]:hover {
+    background-position: right;
+  }
+
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffff;
+    width: 40rem;
+    padding: 2.5rem;
+    box-sizing: border-box;
+  }
+
+  .box h2 {
+    margin: 0 0 1.875rem;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  input:invalid {
+    box-shadow: none;
+  }
+
+  .focus + span::before {
+    top: -5px;
+  }
+
+  .focus + span::after {
+    width: 100%;
+  }
+
+  html {
+    background: url("https://i.redd.it/y1ostvqnr4711.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+</style>
+
+<body>
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+  <div class="box">
+    <h2>Add Comment</h2>
+    <form name="lform" onsubmit="return validate(this)" action="#">
+      <div class="inputbox">
+        <input type="text" name="email" required onkeyup="this.setAttribute('value', this.value);" value="" autocomplete="off">
+        <span data-placeholder="Match ID"></span>
+      </div>
+      <div class="inputbox">
+        <input type="text" autocomplete="off" name="password" required value="" onkeyup="this.setAttribute('value', this.value);">
+        <span data-placeholder="Commentry"></span>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <script type="text/javascript">
+    $(".box .inputbox input").on("focus", function() {
+      $(this).addClass("focus");
+    });
+    $(".box .inputbox input").on("blur", function() {
+      if ($(this).val() == "")
+        $(this).removeClass("focus");
+    });
+    function validate(form) {
+      var input = document.forms.lform.email.value;
+      alert("Your Email address is " + input);
+      return false;
+    }
+  </script>
+</body>
+
+</html>

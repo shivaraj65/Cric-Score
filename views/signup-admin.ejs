@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Shivaraj">
+    <meta name="generator" content="">
+    <title>add user</title>
+      <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cabin+Sketch&display=swap" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+    <style>
+    body{
+      position: relative;
+    }
+      .h3{
+        font-family: 'Audiowide', cursive;
+        color:#17a2b8;
+      }
+      .button{
+        font-family: 'Cabin Sketch', cursive;
+      }
+      .hidden{
+        display: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="public/assets/css/login.css" rel="stylesheet">
+  </head>
+  <body>
+    <form class="form-signin" method="post" action="/add_user<%=ID%>">
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Scoccer Score</h1>
+    <h4>Sign up</h4>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="Name" class="form-control" placeholder="name" required autofocus>
+    <label for="inputPassword">User Name</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" name="Email" class="form-control" placeholder="Email address" required>
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="tel" maxlength="10" name="mobileNumber" class="form-control" placeholder="mobile-number" required>
+    <label for="inputMobileNumber">Mobile Number</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="Desig" class="form-control" placeholder="designation" value="admin" required>
+    <label for="ipdesignation">User Designation</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" name="Password" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <button class="btn btn-lg btn-outline-info btn-block button" type="submit">Sign Up!!!</button>
+  <p class="footer" >made with ❤ in India</p>
+</form>
+
+</body>
+</html>

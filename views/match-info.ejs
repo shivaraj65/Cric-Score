@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>match data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cabin+Sketch&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style media="screen">
+      body{
+        text-align: center;
+      }
+      .background{
+        height:100%;
+        width:100vw;
+        background-image: linear-gradient(to right bottom, #ecf4f6, #d1ecf2, #b4e5ec, #95dee4, #73d6db, #60d2d3, #4bcdcb, #31c9c2, #31c7ba, #32c5b2, #36c2aa, #3ac0a1);
+        position: fixed;
+        z-index: -9999;
+      }
+      .border-bottom{
+        border-bottom: 3px solid #e6e6e6;
+      }
+
+      .section-1{
+        padding: 20px 0;
+      }
+
+      .scroll-div{
+        height: 70vh;
+        overflow-y: auto;
+        position: relative;
+        margin: auto;
+      }
+      ::-webkit-scrollbar {
+          width: 0;  /* Remove scrollbar space */
+          background: transparent;  /* Optional: just make scrollbar invisible */
+      }
+
+      .font-1{
+        font-family: 'Cabin Sketch', cursive;
+        font-size: 2.5rem;
+      }
+      .font-2{
+        font-family: 'Audiowide', cursive;
+        font-size: 1.5rem;
+      }
+      .font-3{
+        /* font-family: 'Audiowide', cursive; */
+        font-size: 1rem;
+      }
+      .text-white{
+        color: #fff;
+      }
+      .card {
+        text-align: left;
+        padding: 10px 20px;
+        margin: 15px 10px;
+        background: #74ebd5;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #74ebd5, #ACB6E5);
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+        transition: 0.3s;
+      }
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+      .navbar{
+        background-color: null;
+      }
+      /* for md and lg devices */
+      @media(min-width:992px){
+        .section-1{
+          width:50%;
+          margin: auto;
+        }
+      }
+      /* for s and xs devices */
+      @media only screen and (max-width:990px){
+        .scroll-div{
+          height: 80vh;
+        }
+        .section-1{
+          width:90%;
+          margin:auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Cric Score</a>
+      <a href="/"><button class="btn btn-outline-info my-2 my-sm-0">Logout</button></a>
+    </nav>
+  <div class="background">
+  </div>
+    <div class="section">
+      <div class="section-1 border-bottom sticky-top">
+          <h2 class="font-1"><%=matchData.teams%></h2>
+          <h4 class="font-2"><%=matchData.score%></h4>
+          <p class="font-3"><%=matchData.players%></p>
+      </div>
+      <div class="section-1 scroll-div" id="chat">
+        <h1 class="font-2">COMMENTRY</h1>
+
+<%  for(var i=0 ; i < com.length ; i++){  %>
+        <div class="card">
+          <h1 class="font-3"><%=com[i][0]%></h1>
+          <p class="font-3"><%=com[i][1]%></p>
+        </div>
+  <% } %>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
